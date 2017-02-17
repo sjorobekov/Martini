@@ -36,7 +36,7 @@ RUN echo "deb http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list &&
                     -y
 
 # Install Nginx
-ADD docker/nginx_install.sh /nginx_install.sh
+ADD ./scripts/nginx_install.sh /nginx_install.sh
 RUN ./nginx_install.sh
 
 RUN apt-get clean && apt-get autoclean
