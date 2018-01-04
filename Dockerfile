@@ -9,12 +9,11 @@ RUN echo "deb http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list &&
     echo "deb-src http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list && \
     wget -O /usr/local/src/dotdeb.gpg https://www.dotdeb.org/dotdeb.gpg && apt-key add /usr/local/src/dotdeb.gpg && \
     # Repository for NodeJS
-    curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
+    curl -sL https://deb.nodesource.com/setup_8.x -o nodesource_setup.sh && \
     bash nodesource_setup.sh && \
     apt-get update && \
     apt-get install acl \
                     software-properties-common \
-
                     # PHP
                     php7.0 \
                     php7.0-fpm \
@@ -26,11 +25,10 @@ RUN echo "deb http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list &&
                     php7.0-pdo \
                     php7.0-pgsql \
                     php7.0-mbstring \
+                    php7.0-curl \
                     php-pear pkg-config php7.0-dev \
-
                     # Supervisor
                     supervisor \
-
                     # NodeJS
                     nodejs build-essential \
                     -y
